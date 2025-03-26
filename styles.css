@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #F5F5F5;
+    font-size: 62.5%;
+    
+}
+html{
+    --light-violet: #A554E6;
+    --deep-violet:#7235a5;
+    --text-color:#344054;
+    --deep-gray:#475467;
+}
+img{
+    width: 100%;
+}
+ul li {
+list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/* Common styles========================================================================================================================================= */
+.container{
+    margin: 0 auto;
+    width: 80%;
+}
+button.btn-outLined{
+    background: transparent;
+    padding: 12px 37px ;
+    border: 1px solid var(--light-violet);
+    color: var(--light-violet);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.gradient-btn {
+    background: linear-gradient(180deg, #A554E6, #7235a5);
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+}
+.section-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section-heading h2{
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+.section-heading span{
+    color: var(--light-violet);
+}
+.gradient-btn:hover,
+button.login:hover,
+button.btn-outLined:hover{
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+@media (max-width: 1024px){
+    .section-heading h2{
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    .container{
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 15px;
+    }
+   
+    .section-heading h2{
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
+/* Navbar===================================================================================================================================== */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 90px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+.logo img{
+  align-self: center;
+  height: 70px;
+  width: 100px;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.nav-links li {
+    margin: 0 15px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+.mbl-buttons {
+    visibility: hidden;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+.buttons button.login,
+.mbl-buttons button.login {
+    background: transparent;
+    padding: 8px 27px ;
+    border: 1px solid gray;
+    color: var(--light-violet);
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+.buttons button.btn-outLined {
+    background: transparent;
+    padding: 8px 27px ;
+    border: 1px solid var(--light-violet);
+    color: var(--light-violet);
+    border-radius: 50px;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background: white;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        padding-top: 60px;
+        transition: left 0.3s ease-in-out;
+    }
+    .nav-links.active {
+        left: 0;
+    }
+    .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .buttons{
+        display: none;
+    }
+    .mbl-buttons {
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        margin: 0 1rem;
+    }
+}
+
+/* ===================================================================================================================================== Blog Section =========================================== */
+.cards{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(450px, 1fr) );
+    gap: 35px;
+    
+}
+.card {
+    background: white;
+    padding: 30px 34px 32px 34px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+.card-heading{
+    display: flex;
+    gap: 1rem;
+    
+}
+i.fa-solid.fa-circle-check {
+    color: var(--light-violet);
+    font-size: 1.2rem;
+    width: 25px;
+    
+}
+.card-heading span {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: justify;
+    margin-top: -10px;
+    padding: 0 4rem 0 0;
+    
+}
+
+.s-cards{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(380px, 1fr) );
+    gap: 35px;
+    margin-top: 60px;
+    
+}
+.card-text p,
+.s-card p{
+    font-size: 16px;
+    margin-top: -5px;
+    color: var(--text-color);
+}
+.s-card{
+    border: 1px solid #D0D5DD;
+    padding: 24px;
+    border-radius: 16px;
+    
+}
+.s-card span{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: justify;
+    padding: 0 4rem 0 0;
+    margin-top: 1rem;
+
+}
+.s-card p{
+    margin-top: 8px;
+}
+@media (max-width: 1024px){
+    .card{
+        margin-bottom: 0;
+    }
+}
+@media (max-width: 768px){
+    .card{
+        margin-bottom: 0;
+    }
+}
+
+/* ================================================================================== Vedios Carousel==================================================== */
+
+
+
+/* ================================================================================ Populer section ========================================================== */
+
+/* ==================================================================== Testimonial ============================================================================== */
+
+
+/* ========================================================================================================================================Faq =================================================== */
+
+
+/* Footer style======================================================================== */
+.footer{
+    background: white;
+    padding: 40px 20px;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width:80%;
+    padding: 0 0 2rem 0;
+    margin: 0 auto;
+}
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+.footer-section p{
+    padding: 0 3rem 0 0;
+}
+
+.footer-btn button.login{
+    background: transparent;
+    padding: 12px 27px ;
+    font-size: 16px;
+    border: 1px solid gray;
+    color: var(--light-violet);
+    border-radius: 50px;
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.footer-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.footer-section p, .footer-section ul, .footer-section form {
+    font-size: 14px;
+    color: #555;
+}
+.footer-section ul {
+    list-style: none;
+    padding-left: 0;
+   
+}
+.footer-section ul li {
+    margin-bottom: 10px;
+    text-align: left;
+}
+.footer-section ul li a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+}
+.footer-section form input, .footer-section form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.submit-btn {
+    background: #1D1D1D;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+}
+.submit-btn:hover {
+    background: #333;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #555;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section p{
+        padding: 0;
+    }
+    .footer-section ul li {
+        text-align: center;
+    }
+}
