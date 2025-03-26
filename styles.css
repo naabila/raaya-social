@@ -59,12 +59,23 @@ button.btn-outLined{
     justify-content: center;
     align-items: center;
 }
-.section-heading h2{
+.section-heading-left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.section-heading h2,
+.section-heading-left h2{
     font-size: 3rem;
     font-weight: 700;
     text-align: center;
 }
-.section-heading span{
+.section-heading-left h2{
+    font-weight: 600;
+}
+.section-heading span,
+.section-heading-left span{
     color: var(--light-violet);
 }
 .gradient-btn:hover,
@@ -72,6 +83,9 @@ button.login:hover,
 button.btn-outLined:hover{
     opacity: 0.9;
     transform: scale(1.05);
+}
+.section-heading-left span.heading-img img{
+width: 200px;
 }
 @media (max-width: 1024px){
     .section-heading h2{
@@ -87,11 +101,18 @@ button.btn-outLined:hover{
         padding: 0 15px;
     }
    
-    .section-heading h2{
+    .section-heading h2,
+    .section-heading-left h2{
         font-size: 2rem;
         font-weight: 700;
         text-align: center;
     }
+    .section-heading h2{
+        text-align: left;
+    }
+    .section-heading-left span.heading-img img{
+        width: 100px;
+        }
 }
 
 /* Navbar===================================================================================================================================== */
@@ -273,8 +294,13 @@ i.fa-solid.fa-circle-check {
 }
 
 /* ================================================================================== Vedios Carousel==================================================== */
-
-
+.carousel-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
 
 /* ================================================================================ Populer section ========================================================== */
 
@@ -282,7 +308,92 @@ i.fa-solid.fa-circle-check {
 
 
 /* ========================================================================================================================================Faq =================================================== */
+.accordion-section{
+    padding: 8rem 0;
+}
+.accordion {
+    width: 100%;
+    max-width: 100%;
+    margin: auto; 
+}
+.accordion-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #212121;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+.accordion-content{
+    color: var(--text-color);
+    font-size: 1rem;
+    max-width: 700px;
+}
+.accordion-header:hover {
+    background: #f9f9f9;
+}
+.icon {
+    transition: transform 0.3s ease-in-out;
+}
+.accordion-header i.fas.fa-plus.icon{
+    border: 1px solid gray;
+    border-radius: 50%;
+    padding: 9px;
+    font-size: 14px;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background: #fafafa;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+.accordion-item.active .accordion-content {
+    max-height: 200px;
+    padding: 15px;
+}
 
+.accordion-item.active i.fas.fa-minus.icon{
+    
+    border: 1px solid gray;
+    border-radius: 50%;
+    padding: 9px;
+    font-size: 14px;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .accordion-section{
+        padding: 2rem 0;
+    }
+}
+@media (max-width: 768px) {
+    .accordion-section{
+        padding: 3rem 0;
+    }
+}
 
 /* Footer style======================================================================== */
 .footer{
