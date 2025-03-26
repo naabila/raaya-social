@@ -22,3 +22,52 @@ document.querySelectorAll('.accordion-header').forEach(header => {
         icon.classList.replace(isActive ? 'fa-minus' : 'fa-plus', isActive ? 'fa-plus' : 'fa-minus');
     });
 });
+
+// Carousel
+const track = document.querySelector('.carousel-track');
+        const nextButton = document.querySelector('.next-button');
+        const nextButton1 = document.querySelector('.next-button-1');
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentIndex = 0;
+        let autoScrollInterval;
+        let slideWidth;
+
+        function updateSlideWidth() {
+            slideWidth = slides[0].offsetWidth + 20;
+        }
+
+        function goToSlide(index) {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
+            currentIndex = index;
+        }
+
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            updateSlideWidth();
+            goToSlide(currentIndex);
+        });
+
+        // Initialize
+        updateSlideWidth();
+        startAutoScroll();
+
+        // Button click handler
+        nextButton.addEventListener('click', () => {
+            clearInterval(autoScrollInterval);
+            nextSlide();
+            startAutoScroll();
+        });
+
+       
+       
