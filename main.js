@@ -59,15 +59,34 @@ const track = document.querySelector('.carousel-track');
         });
 
         // Initialize
-        updateSlideWidth();
-        startAutoScroll();
+        // updateSlideWidth();
+        // startAutoScroll();
 
-        // Button click handler
+        // Button functionality
         nextButton.addEventListener('click', () => {
             clearInterval(autoScrollInterval);
             nextSlide();
             startAutoScroll();
         });
+
+  
+// Testimonial gallery
+document.addEventListener('DOMContentLoaded', () => {
+    const gallerySlides = document.querySelector('.gallery-slides');
+    const startButtons = document.querySelectorAll('.start-btn');
+
+    //hover
+    gallerySlides.addEventListener('mouseenter', () => {
+        gallerySlides.style.animationPlayState = 'paused';
+    });
+
+    
+    gallerySlides.addEventListener('mouseleave', () => {
+        gallerySlides.style.animationPlayState = 'running';
+    });
+
+
+});
 
        
        
